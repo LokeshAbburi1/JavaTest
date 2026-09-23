@@ -1,6 +1,10 @@
 public class Q2_Inheritance {
 
     // ── PREDICT: What does main() print for lines 1-4? ──
+    //1: Falcon spinning
+    //2: Falcon go brrr
+    //3: Falcon
+    //4: true
 
     static class Motor {
         String name() { return "Motor"; }
@@ -37,12 +41,22 @@ public class Q2_Inheritance {
         //
         // Uncomment the test below when done.
 
-        // Neo n = new Neo(6000);
-        // System.out.print("5: "); n.run();  // should print: Neo spinning at 6000 RPM
-        // assert n.name().equals("Neo");
-        // assert n instanceof Motor;
-        // System.out.println("Neo ok");
+         Neo n = new Neo(6000);
+         System.out.print("5: "); n.run();  // should print: Neo spinning at 6000 RPM
+         assert n.name().equals("Neo");
+         assert n instanceof Motor;
+         System.out.println("Neo ok");
     }
+    public static class Neo extends Kraken {
+        private int RPM = 0;
+        public Neo (int a) {
+            RPM = a;
+        }
+        String name() { return "Neo"; }
+        public void run() {
+            System.out.println(name() + " is spinning at " + this.RPM + " RPM");
+        }
+        
 
     // TODO: write the Neo class here
 }
