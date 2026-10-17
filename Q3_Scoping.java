@@ -24,11 +24,12 @@ public class Q3_Scoping {
         }
         System.out.println("3: " + x);
         // Q: does "x2" exist here? (yes/no, and why)
-
+        no, x2's scope is limited to the for loop
         int val = 5;
         System.out.println("4: " + val + " " + a.count);
         // Q: why does a.count compile? is this good practice?
-
+        /* a.count compiles because the count variable's scope is within the class. This is not good practice because 
+             you would want to create a getter method */
         // ── WRITE ──
         // Create a class Counter with:
         //   - a static int "total" tracking how many Counters have been created
@@ -38,7 +39,9 @@ public class Q3_Scoping {
         //     is the 1-based creation order (first Counter is #1, second is #2, etc.)
         //
         // Uncomment when done:
+        
 
+                    
         // Counter c1 = new Counter("left");
         // Counter c2 = new Counter("right");
         // System.out.println("5: " + c1);   // left (#1)
@@ -48,4 +51,20 @@ public class Q3_Scoping {
     }
 
     // TODO: write Counter here
+    public static class Counter
+            {
+                private static total = 0;
+                private label;
+                private id;
+                public Counter(String label)
+                    {
+                        total +=1;
+                        id = total;
+                        this.label = label;
+                }
+                public String toString()
+                    {
+                        return label + " #" + id;
+                    }
+}
 }
