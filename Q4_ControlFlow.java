@@ -1,6 +1,6 @@
 public class Q4_ControlFlow {
 
-    // ── PREDICT: What does main() print for lines 1-5? ──
+    // ── PREDICT: What does main() print for lines 1-5? ── C
 
     static boolean log(String label) {
         System.out.println("  eval " + label);
@@ -8,7 +8,7 @@ public class Q4_ControlFlow {
     }
 
     public static void main(String[] args) {
-        // Q4a: which "eval" lines actually print?
+        // Q4a: which "eval" lines actually print? 3rd one prints c
         System.out.println("1:");
         if (false && log("A")) {}
         if (true || log("B")) {}
@@ -19,12 +19,15 @@ public class Q4_ControlFlow {
         int val = 2;
         switch (val) {
             case 1: System.out.println("  one");
+                break;
             case 2: System.out.println("  two");
+                break;
             case 3: System.out.println("  three");
+                break;
             default: System.out.println("  default");
         }
 
-        // Q4c: what's the final value of sum?
+        // Q4c: what's the final value of sum? 19 1+2+4+5+7
         int sum = 0;
         for (int i = 0; i < 10; i++) {
             if (i % 3 == 0) continue;
@@ -33,13 +36,13 @@ public class Q4_ControlFlow {
         }
         System.out.println("3: " + sum);
 
-        // Q4d: post-increment in expression
+        // Q4d: post-increment in expression 12
         int n = 5;
         int result = n++ + ++n;
         System.out.println("4: " + result + " " + n);
 
-        // Q4e
-        System.out.println("5: " + (true ? "yes" : "no") + (1 > 2 ? "!" : "?"));
+        // Q4e 5: yes?
+        System.out.println("5: " + (true ? "yes" : "no") + (1 > 2 ? "!" : "?")); 
 
         // ── WRITE ──
         // Implement fizzBuzz(int n) that returns:
@@ -62,7 +65,16 @@ public class Q4_ControlFlow {
 
     // TODO: implement with a switch expression
     static String fizzBuzz(int n) {
-        // your code here
-        return "";
+        switch ((n%3 == 0? 1:0) + (n%5 == 0? 2:0))
+            {
+                case 1:
+                    return "Fizz";
+                case 2:
+                    return "Buzz";
+                case 3: 
+                    return "FizzBuzz";
+                default:
+                    return "" + n;
+            }
     }
 }
